@@ -27,7 +27,7 @@ chain = prompt_template|model|parser
 # App definition
 app = FastAPI(title="Langchain Server",
              version="1.0",
-              description="A simple API server using Langchain runnable interfaces"
+              description="A Simple API server using Langchain runnable interfaces"
              )
 
 # Adding chain routes
@@ -39,4 +39,5 @@ add_routes(
 if __name__=="__main__":
     import uvicorn
     uvicorn.run(app,host="127.0.0.1",port=8000)
+
 
