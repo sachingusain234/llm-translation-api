@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from langserve import add_routes
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
+os.environ["LANGCHAIN_PROJECT"] = os.getenv("LANGCHAIN_PROJECT")
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 model = ChatGroq(model="moonshotai/kimi-k2-instruct",groq_api_key=groq_api_key)
 
 # Creating the Prompt Template 
@@ -39,5 +41,6 @@ add_routes(
 if __name__=="__main__":
     import uvicorn
     uvicorn.run(app,host="127.0.0.1",port=8000)
+
 
 
